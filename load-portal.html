@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Loading United Portal</title></head>
+<body style="font-family:system-ui;padding:2rem;background:#F6F9FC;color:#0A2540">
+<p>Loading United Real Estate Philadelphia portal…</p>
+<script>
+(async () => {
+  const n = 4;
+  let html = '';
+  for (let i = 0; i < n; i++) {
+    html += await (await fetch('chunk_' + i + '.txt')).text();
+  }
+  document.open();
+  document.write(html);
+  document.close();
+})().catch(e => {
+  document.body.innerHTML = '<p style="color:#c00">Could not load portal: ' + e + '. Try opening united-onboarding.html if present.</p>';
+});
+</script>
+</body></html>
