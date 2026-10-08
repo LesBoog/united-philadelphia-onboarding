@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>United Portal Assembler</title></head>
+<body>
+<p style="font-family:system-ui;padding:2rem">Assembling portal…</p>
+<script>
+async function go() {
+  const p1 = await (await fetch('part1.b64.txt')).text();
+  const p2 = await (await fetch('part2.b64.txt')).text();
+  const html = atob(p1.trim() + p2.trim());
+  document.open(); document.write(html); document.close();
+}
+go().catch(e => { document.body.innerHTML = '<p style="font-family:system-ui;padding:2rem;color:red">Failed to assemble: ' + e + '. Open united-onboarding.html if available.</p>'; });
+</script>
+</body></html>
