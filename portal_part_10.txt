@@ -1,0 +1,6 @@
+onst el = document.getElementById(id);
+    if (el) el.addEventListener('input', runCalculator);
+  });
+</script>
+</body>
+</html>
