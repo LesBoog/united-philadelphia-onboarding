@@ -51,719 +51,220 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: saturate(180%) blur(16px);
-    -webkit-backdrop-filter: saturate(180%) blur(16px);
-    border-bottom: 1px solid var(--gray-200);
-    padding: 0 1.5rem;
-  }
-  .nav-inner {
-    max-width: 1120px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 56px;
-  }
-  .logo {
-    font-weight: 700; font-size: 0.95rem; color: var(--navy);
-    text-decoration: none; letter-spacing: -0.03em;
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .logo::before {
-    content: ''; width: 22px; height: 22px; border-radius: 6px;
-    background: linear-gradient(135deg, var(--indigo), #0A2540);
-    flex-shrink: 0;
-  }
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid var(--gray-200); padding: 0 1.5rem; }
+  .nav-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .logo { font-weight: 700; font-size: 0.95rem; color: var(--navy); text-decoration: none; letter-spacing: -0.03em; display: flex; align-items: center; gap: 0.5rem; }
+  .logo::before { content: ''; width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, var(--indigo), #0A2540); flex-shrink: 0; }
   .logo span { color: var(--indigo); font-weight: 600; }
-  .nav-links {
-    display: none; gap: 0.15rem; list-style: none;
-  }
-  .nav-links a {
-    text-decoration: none; color: var(--gray-600);
-    font-size: 0.8125rem; font-weight: 500;
-    padding: 0.4rem 0.7rem; border-radius: 6px;
-    transition: color 0.15s, background 0.15s;
-  }
-  .nav-links a:hover, .nav-links a.active {
-    color: var(--navy); background: var(--gray-100);
-  }
-  .nav-cta {
-    background: var(--indigo); color: white; border: none;
-    padding: 0.45rem 0.95rem; border-radius: 6px;
-    font-weight: 600; font-size: 0.8125rem; cursor: pointer;
-    transition: background 0.15s, box-shadow 0.15s;
-    font-family: inherit;
-    box-shadow: 0 1px 2px rgba(99, 91, 255, 0.2);
-  }
+  .nav-links { display: none; gap: 0.15rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--gray-600); font-size: 0.8125rem; font-weight: 500; padding: 0.4rem 0.7rem; border-radius: 6px; transition: color 0.15s, background 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--navy); background: var(--gray-100); }
+  .nav-cta { background: var(--indigo); color: white; border: none; padding: 0.45rem 0.95rem; border-radius: 6px; font-weight: 600; font-size: 0.8125rem; cursor: pointer; transition: background 0.15s, box-shadow 0.15s; font-family: inherit; box-shadow: 0 1px 2px rgba(99, 91, 255, 0.2); }
   .nav-cta:hover { background: var(--navy); }
-  .menu-btn {
-    display: flex; background: none; border: none;
-    font-size: 1.35rem; cursor: pointer; color: var(--navy);
-    padding: 0.25rem;
-  }
+  .menu-btn { display: flex; background: none; border: none; font-size: 1.35rem; cursor: pointer; color: var(--navy); padding: 0.25rem; }
 
-  @media (min-width: 960px) {
-    .nav-links { display: flex; }
-    .menu-btn { display: none; }
-  }
+  @media (min-width: 960px) { .nav-links { display: flex; } .menu-btn { display: none; } }
 
-  .mobile-menu {
-    display: none; flex-direction: column; gap: 0.15rem;
-    padding: 0.75rem 1.5rem 1.25rem; background: white;
-    border-bottom: 1px solid var(--gray-200);
-  }
+  .mobile-menu { display: none; flex-direction: column; gap: 0.15rem; padding: 0.75rem 1.5rem 1.25rem; background: white; border-bottom: 1px solid var(--gray-200); }
   .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    text-decoration: none; color: var(--gray-700);
-    font-weight: 500; font-size: 0.9rem;
-    padding: 0.6rem 0.75rem; border-radius: 6px;
-  }
+  .mobile-menu a { text-decoration: none; color: var(--gray-700); font-weight: 500; font-size: 0.9rem; padding: 0.6rem 0.75rem; border-radius: 6px; }
   .mobile-menu a:hover { background: var(--gray-50); }
 
-  .hero {
-    background: var(--navy);
-    color: white; padding: 3.5rem 1.5rem 4rem;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 85% 10%, rgba(99,91,255,0.22), transparent 50%),
-      radial-gradient(ellipse 50% 40% at 10% 90%, rgba(14,147,115,0.08), transparent 45%);
-  }
-  .hero::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-  }
-  .hero-inner {
-    max-width: 1120px; margin: 0 auto; position: relative;
-    display: grid; gap: 2.5rem;
-  }
-  @media (min-width: 900px) {
-    .hero-inner { grid-template-columns: 1.15fr 0.95fr; align-items: center; gap: 3rem; }
-  }
-  .hero h1 {
-    font-size: clamp(2rem, 4.5vw, 2.85rem);
-    font-weight: 700; line-height: 1.12; letter-spacing: -0.035em;
-    margin-bottom: 0.65rem;
-  }
-  .hero .sub {
-    font-size: clamp(1.05rem, 2vw, 1.25rem);
-    font-weight: 500; color: #A5B4FC; margin-bottom: 0.85rem;
-    letter-spacing: -0.01em;
-  }
-  .hero p {
-    font-size: 0.95rem; color: #94A3B8; max-width: 480px;
-    margin-bottom: 1.75rem; line-height: 1.65;
-  }
+  .hero { background: var(--navy); color: white; padding: 3.5rem 1.5rem 4rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 85% 10%, rgba(99,91,255,0.22), transparent 50%), radial-gradient(ellipse 50% 40% at 10% 90%, rgba(14,147,115,0.08), transparent 45%); }
+  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent); }
+  .hero-inner { max-width: 1120px; margin: 0 auto; position: relative; display: grid; gap: 2.5rem; }
+  @media (min-width: 900px) { .hero-inner { grid-template-columns: 1.15fr 0.95fr; align-items: center; gap: 3rem; } }
+  .hero h1 { font-size: clamp(2rem, 4.5vw, 2.85rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.035em; margin-bottom: 0.65rem; }
+  .hero .sub { font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 500; color: #A5B4FC; margin-bottom: 0.85rem; letter-spacing: -0.01em; }
+  .hero p { font-size: 0.95rem; color: #94A3B8; max-width: 480px; margin-bottom: 1.75rem; line-height: 1.65; }
   .hero-btns { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    gap: 0.4rem; padding: 0.65rem 1.15rem; border-radius: 6px;
-    font-weight: 600; font-size: 0.875rem; cursor: pointer;
-    border: none; text-decoration: none; transition: all 0.15s;
-    font-family: inherit; letter-spacing: -0.01em;
-  }
-  .btn-primary {
-    background: var(--indigo); color: white;
-    box-shadow: 0 1px 2px rgba(99, 91, 255, 0.25);
-  }
-  .btn-primary:hover {
-    background: var(--blue-light);
-    box-shadow: 0 2px 8px rgba(99, 91, 255, 0.35);
-  }
-  .btn-secondary {
-    background: rgba(255,255,255,0.06); color: white;
-    border: 1px solid rgba(255,255,255,0.18);
-  }
-  .btn-secondary:hover {
-    border-color: rgba(255,255,255,0.35);
-    background: rgba(255,255,255,0.1);
-  }
-  .btn-outline {
-    background: white; color: var(--indigo);
-    border: 1px solid var(--gray-200);
-    box-shadow: var(--shadow);
-  }
-  .btn-outline:hover {
-    border-color: var(--indigo);
-    background: var(--blue-soft);
-  }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.65rem 1.15rem; border-radius: 6px; font-weight: 600; font-size: 0.875rem; cursor: pointer; border: none; text-decoration: none; transition: all 0.15s; font-family: inherit; letter-spacing: -0.01em; }
+  .btn-primary { background: var(--indigo); color: white; box-shadow: 0 1px 2px rgba(99, 91, 255, 0.25); }
+  .btn-primary:hover { background: var(--blue-light); box-shadow: 0 2px 8px rgba(99, 91, 255, 0.35); }
+  .btn-secondary { background: rgba(255,255,255,0.06); color: white; border: 1px solid rgba(255,255,255,0.18); }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.1); }
+  .btn-outline { background: white; color: var(--indigo); border: 1px solid var(--gray-200); box-shadow: var(--shadow); }
+  .btn-outline:hover { border-color: var(--indigo); background: var(--blue-soft); }
 
-  .hero-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--radius-lg); padding: 1.5rem 1.6rem;
-    backdrop-filter: blur(12px);
-  }
-  .hero-card h3 {
-    font-size: 0.7rem; margin-bottom: 1rem; color: #A5B4FC;
-    font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
-  }
+  .hero-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 1.5rem 1.6rem; backdrop-filter: blur(12px); }
+  .hero-card h3 { font-size: 0.7rem; margin-bottom: 1rem; color: #A5B4FC; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
   .benefit-list { list-style: none; display: grid; gap: 0.55rem; }
-  .benefit-list li {
-    display: flex; align-items: center; gap: 0.6rem;
-    font-size: 0.875rem; color: #E2E8F0; font-weight: 450;
-  }
-  .benefit-list li::before {
-    content: ''; width: 16px; height: 16px; border-radius: 50%;
-    background: var(--success) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6.5L4.5 8.5L9.5 3.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat;
-    flex-shrink: 0;
-  }
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    font-size: 0.7rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.07em;
-    color: #A5B4FC; margin-bottom: 0.85rem;
-    background: rgba(99,91,255,0.15); border: 1px solid rgba(99,91,255,0.25);
-    padding: 0.3rem 0.65rem; border-radius: 999px;
-  }
-  .compare-strip {
-    background: white; border-bottom: 1px solid var(--gray-200);
-    padding: 2rem 1.5rem;
-  }
-  .compare-inner {
-    max-width: 1120px; margin: 0 auto;
-  }
-  .compare-title {
-    text-align: center; font-size: 0.7rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.07em;
-    color: var(--gray-500); margin-bottom: 1.25rem;
-  }
-  .compare-grid {
-    display: grid; gap: 1rem;
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 700px) {
-    .compare-grid { grid-template-columns: 1fr auto 1fr; align-items: stretch; }
-  }
-  .compare-col {
-    border-radius: var(--radius-lg); padding: 1.25rem 1.35rem;
-    border: 1px solid var(--gray-200);
-    box-shadow: var(--shadow);
-  }
-  .compare-col.traditional {
-    background: var(--gray-25);
-  }
-  .compare-col.united {
-    background: var(--blue-soft);
-    border-color: #DDD9FF;
-  }
-  .compare-col h3 {
-    font-size: 0.8125rem; font-weight: 600; margin-bottom: 0.75rem;
-    display: flex; align-items: center; gap: 0.5rem;
-    letter-spacing: -0.01em;
-  }
+  .benefit-list li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: #E2E8F0; font-weight: 450; }
+  .benefit-list li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: var(--success) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6.5L4.5 8.5L9.5 3.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat; flex-shrink: 0; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: #A5B4FC; margin-bottom: 0.85rem; background: rgba(99,91,255,0.15); border: 1px solid rgba(99,91,255,0.25); padding: 0.3rem 0.65rem; border-radius: 999px; }
+
+  .compare-strip { background: white; border-bottom: 1px solid var(--gray-200); padding: 2rem 1.5rem; }
+  .compare-inner { max-width: 1120px; margin: 0 auto; }
+  .compare-title { text-align: center; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--gray-500); margin-bottom: 1.25rem; }
+  .compare-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 700px) { .compare-grid { grid-template-columns: 1fr auto 1fr; align-items: stretch; } }
+  .compare-col { border-radius: var(--radius-lg); padding: 1.25rem 1.35rem; border: 1px solid var(--gray-200); box-shadow: var(--shadow); }
+  .compare-col.traditional { background: var(--gray-25); }
+  .compare-col.united { background: var(--blue-soft); border-color: #DDD9FF; }
+  .compare-col h3 { font-size: 0.8125rem; font-weight: 600; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; letter-spacing: -0.01em; }
   .compare-col.traditional h3 { color: var(--gray-600); }
   .compare-col.united h3 { color: var(--indigo); }
   .compare-col ul { list-style: none; display: grid; gap: 0.45rem; }
-  .compare-col li {
-    font-size: 0.8125rem; color: var(--gray-700);
-    display: flex; align-items: flex-start; gap: 0.5rem;
-    line-height: 1.45;
-  }
-  .compare-col.traditional li::before {
-    content: '–'; color: var(--gray-400); font-weight: 600; flex-shrink: 0;
-  }
-  .compare-col.united li::before {
-    content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0;
-  }
-  .compare-vs {
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 0.7rem; color: var(--gray-400);
-    letter-spacing: 0.06em;
-  }
-  @media (max-width: 699px) {
-    .compare-vs { padding: 0.15rem 0; }
-  }
+  .compare-col li { font-size: 0.8125rem; color: var(--gray-700); display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.45; }
+  .compare-col.traditional li::before { content: '–'; color: var(--gray-400); font-weight: 600; flex-shrink: 0; }
+  .compare-col.united li::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+  .compare-vs { display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.7rem; color: var(--gray-400); letter-spacing: 0.06em; }
+  @media (max-width: 699px) { .compare-vs { padding: 0.15rem 0; } }
 
   section { padding: 3.5rem 1.5rem; }
   .container { max-width: 1120px; margin: 0 auto; }
-  .section-label {
-    display: inline-block; font-size: 0.7rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.07em;
-    color: var(--indigo); margin-bottom: 0.4rem;
-  }
-  h2 {
-    font-size: clamp(1.5rem, 3.5vw, 1.85rem);
-    font-weight: 700; letter-spacing: -0.03em;
-    margin-bottom: 0.5rem; color: var(--navy);
-    line-height: 1.2;
-  }
-  .section-desc {
-    color: var(--gray-500); font-size: 0.95rem;
-    max-width: 540px; margin-bottom: 2rem; line-height: 1.6;
-  }
+  .section-label { display: inline-block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--indigo); margin-bottom: 0.4rem; }
+  h2 { font-size: clamp(1.5rem, 3.5vw, 1.85rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 0.5rem; color: var(--navy); line-height: 1.2; }
+  .section-desc { color: var(--gray-500); font-size: 0.95rem; max-width: 540px; margin-bottom: 2rem; line-height: 1.6; }
 
-  .card-grid {
-    display: grid; gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  }
-  .card {
-    background: white; border-radius: var(--radius-lg);
-    border: 1px solid var(--gray-200); padding: 1.35rem;
-    box-shadow: var(--shadow); transition: box-shadow 0.15s, border-color 0.15s;
-  }
-  .card:hover {
-    box-shadow: var(--shadow-md);
-    border-color: var(--gray-300);
-  }
-  .card-icon {
-    width: 36px; height: 36px; border-radius: 8px;
-    background: var(--blue-soft); color: var(--indigo);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.05rem; margin-bottom: 0.85rem;
-  }
-  .card h3 {
-    font-size: 0.9375rem; font-weight: 600; margin-bottom: 0.3rem;
-    color: var(--navy); letter-spacing: -0.01em;
-  }
+  .card-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .card { background: white; border-radius: var(--radius-lg); border: 1px solid var(--gray-200); padding: 1.35rem; box-shadow: var(--shadow); transition: box-shadow 0.15s, border-color 0.15s; }
+  .card:hover { box-shadow: var(--shadow-md); border-color: var(--gray-300); }
+  .card-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--blue-soft); color: var(--indigo); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; margin-bottom: 0.85rem; }
+  .card h3 { font-size: 0.9375rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--navy); letter-spacing: -0.01em; }
   .card p { font-size: 0.8125rem; color: var(--gray-500); margin-bottom: 0.85rem; line-height: 1.5; }
-  .card .status {
-    font-size: 0.6875rem; font-weight: 600; padding: 0.2rem 0.5rem;
-    border-radius: 999px; display: inline-block; letter-spacing: 0.01em;
-  }
+  .card .status { font-size: 0.6875rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 999px; display: inline-block; letter-spacing: 0.01em; }
   .status-pending { background: var(--warning-soft); color: var(--warning); }
   .status-ready { background: var(--success-soft); color: var(--success); }
   .status-setup { background: var(--blue-soft); color: var(--indigo); }
 
-  .why-grid {
-    display: grid; gap: 0.75rem;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  }
-  .why-item {
-    background: white; border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg); padding: 1.15rem 1.25rem;
-    display: flex; gap: 0.85rem; align-items: flex-start;
-    box-shadow: var(--shadow); transition: border-color 0.15s;
-  }
+  .why-grid { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .why-item { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.15rem 1.25rem; display: flex; gap: 0.85rem; align-items: flex-start; box-shadow: var(--shadow); transition: border-color 0.15s; }
   .why-item:hover { border-color: var(--gray-300); }
-  .why-item .num {
-    background: var(--blue-soft); color: var(--indigo);
-    width: 28px; height: 28px; border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 0.7rem; flex-shrink: 0;
-  }
-  .why-item h4 {
-    font-size: 0.875rem; font-weight: 600; margin-bottom: 0.15rem;
-    letter-spacing: -0.01em; color: var(--navy);
-  }
+  .why-item .num { background: var(--blue-soft); color: var(--indigo); width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.7rem; flex-shrink: 0; }
+  .why-item h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.15rem; letter-spacing: -0.01em; color: var(--navy); }
   .why-item p { font-size: 0.8125rem; color: var(--gray-500); line-height: 1.45; }
 
-  .calc-wrap {
-    display: grid; gap: 1.5rem;
-  }
-  @media (min-width: 900px) {
-    .calc-wrap { grid-template-columns: 1fr 1.05fr; }
-  }
-  .calc-form {
-    background: white; border-radius: var(--radius-lg);
-    border: 1px solid var(--gray-200); padding: 1.5rem;
-    box-shadow: var(--shadow);
-  }
+  .calc-wrap { display: grid; gap: 1.5rem; }
+  @media (min-width: 900px) { .calc-wrap { grid-template-columns: 1fr 1.05fr; } }
+  .calc-form { background: white; border-radius: var(--radius-lg); border: 1px solid var(--gray-200); padding: 1.5rem; box-shadow: var(--shadow); }
   .form-group { margin-bottom: 0.95rem; }
-  .form-group label {
-    display: block; font-size: 0.75rem; font-weight: 550;
-    color: var(--gray-600); margin-bottom: 0.3rem;
-    letter-spacing: -0.01em;
-  }
-  .form-group input, .form-group select {
-    width: 100%; padding: 0.55rem 0.75rem;
-    border: 1px solid var(--gray-200); border-radius: 6px;
-    font-size: 0.875rem; font-family: inherit;
-    transition: border-color 0.15s, box-shadow 0.15s;
-    background: white; color: var(--gray-900);
-  }
-  .form-group input:focus, .form-group select:focus {
-    outline: none; border-color: var(--indigo);
-    box-shadow: var(--shadow-focus);
-  }
-  .form-row {
-    display: grid; gap: 0.75rem;
-    grid-template-columns: 1fr 1fr;
-  }
-  .preset-note {
-    font-size: 0.75rem; color: var(--gray-500);
-    background: var(--gray-50); border-radius: 6px;
-    padding: 0.6rem 0.75rem; margin-bottom: 1rem;
-    line-height: 1.45; border: 1px solid var(--gray-200);
-  }
-  .calc-results {
-    display: grid; gap: 0.75rem;
-  }
-  .result-card {
-    border-radius: var(--radius-lg); padding: 1.15rem 1.25rem;
-    border: 1px solid var(--gray-200); background: white;
-    box-shadow: var(--shadow);
-  }
-  .result-card.current {
-    border-color: var(--gray-200);
-  }
-  .result-card.united-card {
-    background: var(--navy); color: white; border-color: transparent;
-  }
-  .result-card h3 {
-    font-size: 0.75rem; font-weight: 600; margin-bottom: 0.85rem;
-    text-transform: uppercase; letter-spacing: 0.04em;
-  }
+  .form-group label { display: block; font-size: 0.75rem; font-weight: 550; color: var(--gray-600); margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+  .form-group input, .form-group select { width: 100%; padding: 0.55rem 0.75rem; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 0.875rem; font-family: inherit; transition: border-color 0.15s, box-shadow 0.15s; background: white; color: var(--gray-900); }
+  .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--indigo); box-shadow: var(--shadow-focus); }
+  .form-row { display: grid; gap: 0.75rem; grid-template-columns: 1fr 1fr; }
+  .preset-note { font-size: 0.75rem; color: var(--gray-500); background: var(--gray-50); border-radius: 6px; padding: 0.6rem 0.75rem; margin-bottom: 1rem; line-height: 1.45; border: 1px solid var(--gray-200); }
+  .calc-results { display: grid; gap: 0.75rem; }
+  .result-card { border-radius: var(--radius-lg); padding: 1.15rem 1.25rem; border: 1px solid var(--gray-200); background: white; box-shadow: var(--shadow); }
+  .result-card.current { border-color: var(--gray-200); }
+  .result-card.united-card { background: var(--navy); color: white; border-color: transparent; }
+  .result-card h3 { font-size: 0.75rem; font-weight: 600; margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
   .result-card.current h3 { color: var(--gray-500); }
   .result-card.united-card h3 { color: #A5B4FC; }
-  .result-row {
-    display: flex; justify-content: space-between;
-    padding: 0.45rem 0; border-bottom: 1px solid var(--gray-100);
-    font-size: 0.8125rem;
-  }
-  .result-card.united-card .result-row {
-    border-bottom-color: rgba(255,255,255,0.08);
-  }
+  .result-row { display: flex; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid var(--gray-100); font-size: 0.8125rem; }
+  .result-card.united-card .result-row { border-bottom-color: rgba(255,255,255,0.08); }
   .result-row:last-of-type { border-bottom: none; }
-  .result-row .val {
-    font-weight: 600; font-variant-numeric: tabular-nums;
-    letter-spacing: -0.01em;
-  }
-  .result-highlight {
-    background: var(--success-soft); border-radius: var(--radius-lg);
-    padding: 1rem; text-align: center;
-    border: 1px solid #B8E6D5;
-  }
-  .result-highlight .big {
-    font-size: 1.5rem; font-weight: 700; color: var(--success);
-    font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
-  }
-  .result-highlight.dark {
-    background: white;
-    border-color: var(--gray-200);
-  }
+  .result-row .val { font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+  .result-highlight { background: var(--success-soft); border-radius: var(--radius-lg); padding: 1rem; text-align: center; border: 1px solid #B8E6D5; }
+  .result-highlight .big { font-size: 1.5rem; font-weight: 700; color: var(--success); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .result-highlight.dark { background: white; border-color: var(--gray-200); }
   .result-highlight.dark .big { color: var(--navy); }
-  .disclaimer {
-    font-size: 0.7rem; color: var(--gray-500);
-    margin-top: 0.85rem; line-height: 1.5;
-  }
-  .field-hint {
-    font-size: 0.6875rem; color: var(--gray-400); margin-top: 0.2rem;
-  }
-  .section-divider {
-    font-size: 0.6875rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.06em; color: var(--gray-400);
-    margin: 1.1rem 0 0.65rem; padding-top: 0.65rem;
-    border-top: 1px solid var(--gray-100);
-  }
+  .disclaimer { font-size: 0.7rem; color: var(--gray-500); margin-top: 0.85rem; line-height: 1.5; }
+  .field-hint { font-size: 0.6875rem; color: var(--gray-400); margin-top: 0.2rem; }
+  .section-divider { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-400); margin: 1.1rem 0 0.65rem; padding-top: 0.65rem; border-top: 1px solid var(--gray-100); }
 
-  .progress-bar-wrap {
-    background: white; border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg); padding: 1.1rem 1.25rem;
-    margin-bottom: 1.25rem; box-shadow: var(--shadow);
-  }
-  .progress-label {
-    display: flex; justify-content: space-between;
-    font-size: 0.8125rem; font-weight: 550; margin-bottom: 0.5rem;
-    color: var(--gray-700);
-  }
-  .progress-track {
-    height: 6px; background: var(--gray-100); border-radius: 999px; overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%; background: var(--indigo);
-    border-radius: 999px; transition: width 0.35s ease; width: 0%;
-  }
+  .progress-bar-wrap { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; box-shadow: var(--shadow); }
+  .progress-label { display: flex; justify-content: space-between; font-size: 0.8125rem; font-weight: 550; margin-bottom: 0.5rem; color: var(--gray-700); }
+  .progress-track { height: 6px; background: var(--gray-100); border-radius: 999px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--indigo); border-radius: 999px; transition: width 0.35s ease; width: 0%; }
   .steps { display: grid; gap: 0.5rem; }
-  .step {
-    background: white; border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg); overflow: hidden;
-    box-shadow: var(--shadow); transition: border-color 0.15s;
-  }
+  .step { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); transition: border-color 0.15s; }
   .step:hover { border-color: var(--gray-300); }
-  .step-header {
-    display: flex; align-items: center; gap: 0.85rem;
-    padding: 0.9rem 1.15rem; cursor: pointer;
-    user-select: none;
-  }
+  .step-header { display: flex; align-items: center; gap: 0.85rem; padding: 0.9rem 1.15rem; cursor: pointer; user-select: none; }
   .step-header:hover { background: var(--gray-25); }
-  .step-num {
-    width: 28px; height: 28px; border-radius: 6px;
-    background: var(--blue-soft); color: var(--indigo);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 0.75rem; flex-shrink: 0;
-  }
+  .step-num { width: 28px; height: 28px; border-radius: 6px; background: var(--blue-soft); color: var(--indigo); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75rem; flex-shrink: 0; }
   .step.completed .step-num { background: var(--success); color: white; }
-  .step-title {
-    flex: 1; font-weight: 600; font-size: 0.875rem;
-    color: var(--navy); letter-spacing: -0.01em;
-  }
-  .step-pct {
-    font-size: 0.75rem; color: var(--gray-400); font-weight: 600;
-    font-variant-numeric: tabular-nums;
-  }
-  .step-body {
-    display: none; padding: 0 1.15rem 1.15rem;
-    border-top: 1px solid var(--gray-100);
-  }
+  .step-title { flex: 1; font-weight: 600; font-size: 0.875rem; color: var(--navy); letter-spacing: -0.01em; }
+  .step-pct { font-size: 0.75rem; color: var(--gray-400); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .step-body { display: none; padding: 0 1.15rem 1.15rem; border-top: 1px solid var(--gray-100); }
   .step.open .step-body { display: block; }
   .checklist { list-style: none; margin: 0.85rem 0; }
-  .checklist li {
-    display: flex; align-items: center; gap: 0.65rem;
-    padding: 0.45rem 0; font-size: 0.875rem; color: var(--gray-700);
-  }
-  .checklist input[type="checkbox"] {
-    width: 16px; height: 16px; accent-color: var(--indigo); cursor: pointer;
-  }
-  .resources {
-    background: var(--blue-soft); border-radius: 6px;
-    padding: 0.7rem 0.85rem; margin: 0.65rem 0; font-size: 0.8125rem;
-    color: var(--gray-600); border: 1px solid #DDD9FF;
-  }
+  .checklist li { display: flex; align-items: center; gap: 0.65rem; padding: 0.45rem 0; font-size: 0.875rem; color: var(--gray-700); }
+  .checklist input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--indigo); cursor: pointer; }
+  .resources { background: var(--blue-soft); border-radius: 6px; padding: 0.7rem 0.85rem; margin: 0.65rem 0; font-size: 0.8125rem; color: var(--gray-600); border: 1px solid #DDD9FF; }
   .resources a { color: var(--indigo); font-weight: 600; }
 
   .weeks { display: grid; gap: 0.75rem; }
-  @media (min-width: 700px) {
-    .weeks { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (min-width: 1100px) {
-    .weeks { grid-template-columns: repeat(4, 1fr); }
-  }
-  .week-card {
-    background: white; border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg); padding: 1.25rem;
-    box-shadow: var(--shadow); transition: border-color 0.15s;
-  }
+  @media (min-width: 700px) { .weeks { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .weeks { grid-template-columns: repeat(4, 1fr); } }
+  .week-card { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.25rem; box-shadow: var(--shadow); transition: border-color 0.15s; }
   .week-card:hover { border-color: var(--gray-300); }
-  .week-card .week-label {
-    font-size: 0.6875rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.06em; color: var(--indigo); margin-bottom: 0.3rem;
-  }
-  .week-card h3 {
-    font-size: 0.9375rem; margin-bottom: 0.85rem; font-weight: 600;
-    color: var(--navy); letter-spacing: -0.01em;
-  }
+  .week-card .week-label { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--indigo); margin-bottom: 0.3rem; }
+  .week-card h3 { font-size: 0.9375rem; margin-bottom: 0.85rem; font-weight: 600; color: var(--navy); letter-spacing: -0.01em; }
   .week-card ul { list-style: none; }
-  .week-card li {
-    position: relative; padding-left: 1.1rem;
-    margin-bottom: 0.4rem; font-size: 0.8125rem; color: var(--gray-600);
-    line-height: 1.45;
-  }
-  .week-card li::before {
-    content: ''; position: absolute; left: 0; top: 0.4rem;
-    width: 5px; height: 5px; border-radius: 50%; background: var(--indigo);
-  }
+  .week-card li { position: relative; padding-left: 1.1rem; margin-bottom: 0.4rem; font-size: 0.8125rem; color: var(--gray-600); line-height: 1.45; }
+  .week-card li::before { content: ''; position: absolute; left: 0; top: 0.4rem; width: 5px; height: 5px; border-radius: 50%; background: var(--indigo); }
 
-  .funnel {
-    display: flex; flex-wrap: wrap; justify-content: center;
-    gap: 0.4rem; margin: 1.75rem 0;
-  }
-  .funnel-stage {
-    background: white; border: 1px solid var(--gray-200);
-    color: var(--navy); font-weight: 600; font-size: 0.75rem;
-    padding: 0.55rem 0.9rem; border-radius: 6px;
-    position: relative; letter-spacing: -0.01em;
-    box-shadow: var(--shadow);
-  }
-  .funnel-stage:not(:last-child)::after {
-    content: '→'; position: absolute; right: -0.95rem; top: 50%;
-    transform: translateY(-50%); color: var(--gray-400); font-size: 0.85rem;
-  }
-  @media (max-width: 600px) {
-    .funnel { flex-direction: column; align-items: center; }
-    .funnel-stage:not(:last-child)::after {
-      content: '↓'; right: auto; bottom: -0.95rem; top: auto;
-      left: 50%; transform: translateX(-50%);
-    }
-  }
+  .funnel { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; margin: 1.75rem 0; }
+  .funnel-stage { background: white; border: 1px solid var(--gray-200); color: var(--navy); font-weight: 600; font-size: 0.75rem; padding: 0.55rem 0.9rem; border-radius: 6px; position: relative; letter-spacing: -0.01em; box-shadow: var(--shadow); }
+  .funnel-stage:not(:last-child)::after { content: '→'; position: absolute; right: -0.95rem; top: 50%; transform: translateY(-50%); color: var(--gray-400); font-size: 0.85rem; }
+  @media (max-width: 600px) { .funnel { flex-direction: column; align-items: center; } .funnel-stage:not(:last-child)::after { content: '↓'; right: auto; bottom: -0.95rem; top: auto; left: 50%; transform: translateX(-50%); } }
 
-  .contact-card {
-    background: var(--navy);
-    color: white; border-radius: var(--radius-lg); padding: 2rem;
-    display: grid; gap: 1.5rem; align-items: center;
-    border: 1px solid rgba(255,255,255,0.06);
-  }
-  @media (min-width: 700px) {
-    .contact-card { grid-template-columns: 1fr auto; }
-  }
-  .contact-card h3 {
-    font-size: 1.25rem; margin-bottom: 0.25rem; font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-  .contact-card .role {
-    color: #A5B4FC; font-weight: 500; margin-bottom: 0.85rem;
-    font-size: 0.875rem;
-  }
+  .contact-card { background: var(--navy); color: white; border-radius: var(--radius-lg); padding: 2rem; display: grid; gap: 1.5rem; align-items: center; border: 1px solid rgba(255,255,255,0.06); }
+  @media (min-width: 700px) { .contact-card { grid-template-columns: 1fr auto; } }
+  .contact-card h3 { font-size: 1.25rem; margin-bottom: 0.25rem; font-weight: 600; letter-spacing: -0.02em; }
+  .contact-card .role { color: #A5B4FC; font-weight: 500; margin-bottom: 0.85rem; font-size: 0.875rem; }
   .contact-info { display: grid; gap: 0.4rem; font-size: 0.9rem; }
   .contact-info a { color: white; text-decoration: none; }
   .contact-info a:hover { text-decoration: underline; color: #C7D2FE; }
 
-  .recruiter-gate {
-    max-width: 420px; margin: 0 auto; text-align: center;
-    background: white; border: 1px solid var(--gray-200);
-    border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow);
-  }
-  .recruiter-gate input {
-    width: 100%; padding: 0.7rem 0.9rem; margin: 1rem 0;
-    border: 1px solid var(--gray-300); border-radius: 8px;
-    font-size: 1rem; font-family: inherit; text-align: center;
-    letter-spacing: 0.15em;
-  }
-  .recruiter-gate input:focus {
-    outline: none; border-color: var(--blue);
-    box-shadow: 0 0 0 3px rgba(26,86,219,0.15);
-  }
-  .recruiter-gate .gate-error {
-    color: #DC2626; font-size: 0.85rem; margin-bottom: 0.75rem;
-    display: none;
-  }
-  .recruiter-stats {
-    display: grid; gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    margin-bottom: 2rem;
-  }
-  .stat-card {
-    background: white; border: 1px solid var(--gray-200);
-    border-radius: var(--radius); padding: 1.25rem;
-    box-shadow: var(--shadow); text-align: center;
-  }
-  .stat-card .stat-num {
-    font-size: 1.75rem; font-weight: 800; color: var(--navy);
-    letter-spacing: -0.02em;
-  }
-  .stat-card .stat-label {
-    font-size: 0.75rem; font-weight: 600; color: var(--gray-500);
-    text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.25rem;
-  }
-  .agent-table-wrap {
-    background: white; border: 1px solid var(--gray-200);
-    border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
-  }
-  .agent-table {
-    width: 100%; border-collapse: collapse; font-size: 0.9rem;
-  }
-  .agent-table th {
-    text-align: left; padding: 0.85rem 1rem;
-    background: var(--gray-50); font-size: 0.75rem;
-    font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
-    color: var(--gray-500); border-bottom: 1px solid var(--gray-200);
-  }
-  .agent-table td {
-    padding: 0.9rem 1rem; border-bottom: 1px solid var(--gray-100);
-    vertical-align: middle;
-  }
+  .recruiter-gate { max-width: 420px; margin: 0 auto; text-align: center; background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+  .recruiter-gate input { width: 100%; padding: 0.7rem 0.9rem; margin: 1rem 0; border: 1px solid var(--gray-300); border-radius: 8px; font-size: 1rem; font-family: inherit; text-align: center; letter-spacing: 0.15em; }
+  .recruiter-gate input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,86,219,0.15); }
+  .recruiter-gate .gate-error { color: #DC2626; font-size: 0.85rem; margin-bottom: 0.75rem; display: none; }
+  .recruiter-stats { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); margin-bottom: 2rem; }
+  .stat-card { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); text-align: center; }
+  .stat-card .stat-num { font-size: 1.75rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+  .stat-card .stat-label { font-size: 0.75rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.25rem; }
+  .agent-table-wrap { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .agent-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .agent-table th { text-align: left; padding: 0.85rem 1rem; background: var(--gray-50); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gray-500); border-bottom: 1px solid var(--gray-200); }
+  .agent-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--gray-100); vertical-align: middle; }
   .agent-table tr:last-child td { border-bottom: none; }
   .agent-table tr:hover td { background: var(--gray-50); }
   .agent-name { font-weight: 600; color: var(--navy); }
   .agent-meta { font-size: 0.8rem; color: var(--gray-500); }
-  .mini-progress {
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .mini-track {
-    flex: 1; height: 6px; background: var(--gray-200);
-    border-radius: 999px; overflow: hidden; min-width: 60px;
-  }
-  .mini-fill {
-    height: 100%; background: var(--blue); border-radius: 999px;
-  }
-  .step-dots {
-    display: flex; gap: 4px; flex-wrap: wrap;
-  }
-  .step-dot {
-    width: 22px; height: 22px; border-radius: 50%;
-    font-size: 0.65rem; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--gray-200); color: var(--gray-500);
-  }
-  .step-dot.done {
-    background: var(--success); color: white;
-  }
-  .step-dot.partial {
-    background: #FEF3C7; color: #92400E;
-  }
-  .badge {
-    display: inline-block; font-size: 0.7rem; font-weight: 700;
-    padding: 0.2rem 0.55rem; border-radius: 999px;
-  }
+  .mini-progress { display: flex; align-items: center; gap: 0.5rem; }
+  .mini-track { flex: 1; height: 6px; background: var(--gray-200); border-radius: 999px; overflow: hidden; min-width: 60px; }
+  .mini-fill { height: 100%; background: var(--blue); border-radius: 999px; }
+  .step-dots { display: flex; gap: 4px; flex-wrap: wrap; }
+  .step-dot { width: 22px; height: 22px; border-radius: 50%; font-size: 0.65rem; font-weight: 700; display: flex; align-items: center; justify-content: center; background: var(--gray-200); color: var(--gray-500); }
+  .step-dot.done { background: var(--success); color: white; }
+  .step-dot.partial { background: #FEF3C7; color: #92400E; }
+  .badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 999px; }
   .badge-active { background: #DBEAFE; color: #1E40AF; }
   .badge-complete { background: #D1FAE5; color: #065F46; }
   .badge-new { background: #FEF3C7; color: #92400E; }
-  .recruiter-privacy {
-    background: var(--blue-soft); border: 1px solid #DDD9FF;
-    border-radius: 6px; padding: 0.75rem 0.9rem;
-    font-size: 0.775rem; color: var(--gray-600); margin-bottom: 1.25rem;
-    line-height: 1.5;
-  }
-  .agent-detail {
-    display: none; margin-top: 1.5rem;
-    background: white; border: 1px solid var(--gray-200);
-    border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow);
-  }
+  .recruiter-privacy { background: var(--blue-soft); border: 1px solid #DDD9FF; border-radius: 6px; padding: 0.75rem 0.9rem; font-size: 0.775rem; color: var(--gray-600); margin-bottom: 1.25rem; line-height: 1.5; }
+  .agent-detail { display: none; margin-top: 1.5rem; background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
   .agent-detail.open { display: block; }
   .agent-detail h3 { font-size: 1.1rem; margin-bottom: 0.25rem; color: var(--navy); }
   .detail-steps { display: grid; gap: 0.65rem; margin-top: 1rem; }
-  .detail-step {
-    display: flex; align-items: center; gap: 0.75rem;
-    padding: 0.65rem 0.85rem; border-radius: 8px;
-    background: var(--gray-50); font-size: 0.9rem;
-  }
+  .detail-step { display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0.85rem; border-radius: 8px; background: var(--gray-50); font-size: 0.9rem; }
   .detail-step.done { background: #ECFDF5; }
-  .detail-step .ds-num {
-    width: 28px; height: 28px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 0.75rem; flex-shrink: 0;
-    background: var(--gray-200); color: var(--gray-600);
-  }
+  .detail-step .ds-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75rem; flex-shrink: 0; background: var(--gray-200); color: var(--gray-600); }
   .detail-step.done .ds-num { background: var(--success); color: white; }
-  .detail-step .ds-pct {
-    margin-left: auto; font-size: 0.8rem; font-weight: 600; color: var(--gray-500);
-  }
-  @media (max-width: 700px) {
-    .agent-table .hide-mobile { display: none; }
-  }
+  .detail-step .ds-pct { margin-left: auto; font-size: 0.8rem; font-weight: 600; color: var(--gray-500); }
+  @media (max-width: 700px) { .agent-table .hide-mobile { display: none; } }
 
-  footer {
-    background: var(--navy); color: #94A3B8;
-    padding: 2.5rem 1.25rem; font-size: 0.85rem;
-  }
-  .footer-inner {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; flex-wrap: wrap; gap: 1.5rem;
-    justify-content: space-between; align-items: center;
-  }
+  footer { background: var(--navy); color: #94A3B8; padding: 2.5rem 1.25rem; font-size: 0.85rem; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: center; }
   footer a { color: #93C5FD; text-decoration: none; }
-  .footer-disclaimer {
-    max-width: 1200px; margin: 1.5rem auto 0;
-    padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.75rem; line-height: 1.6; color: #64748B;
-  }
+  .footer-disclaimer { max-width: 1200px; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; line-height: 1.6; color: #64748B; }
 
-  .sticky-cta {
-    display: none; position: fixed; bottom: 0; left: 0; right: 0;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid var(--gray-200);
-    padding: 0.65rem 1.25rem; z-index: 90;
-    box-shadow: 0 -4px 16px rgba(16,24,40,0.06);
-  }
-  @media (max-width: 959px) {
-    .sticky-cta { display: block; }
-    body { padding-bottom: 68px; }
-  }
+  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-top: 1px solid var(--gray-200); padding: 0.65rem 1.25rem; z-index: 90; box-shadow: 0 -4px 16px rgba(16,24,40,0.06); }
+  @media (max-width: 959px) { .sticky-cta { display: block; } body { padding-bottom: 68px; } }
   .sticky-cta .btn { width: 100%; }
 
   .bg-white { background: white; }
   .text-center { text-align: center; }
   .mt-2 { margin-top: 1.5rem; }
 
-  .stat-card {
-    background: white; border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg); padding: 1.1rem;
-    box-shadow: var(--shadow); text-align: center;
-  }
-  .stat-card .stat-num {
-    font-size: 1.5rem; font-weight: 700; color: var(--navy);
-    letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
-  }
-  .stat-card .stat-label {
-    font-size: 0.6875rem; font-weight: 600; color: var(--gray-500);
-    text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem;
-  }
-  .agent-table th {
-    font-size: 0.6875rem !important;
-  }
+  .stat-card { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.1rem; box-shadow: var(--shadow); text-align: center; }
+  .stat-card .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--navy); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .stat-card .stat-label { font-size: 0.6875rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; }
+  .agent-table th { font-size: 0.6875rem !important; }
   .badge-active { background: var(--blue-soft); color: var(--indigo); }
   .badge-complete { background: var(--success-soft); color: var(--success); }
   .badge-new { background: var(--warning-soft); color: var(--warning); }
@@ -903,9 +404,7 @@
             <option value="other">Other traditional (illustrative)</option>
           </select>
         </div>
-        <div class="preset-note" id="presetNote">
-          Choose a profile to load illustrative starting values. These are example planning assumptions only — not official rates for any brokerage. Edit every field to match your real plan.
-        </div>
+        <div class="preset-note" id="presetNote">Choose a profile to load illustrative starting values. These are example planning assumptions only — not official rates for any brokerage. Edit every field to match your real plan.</div>
 
         <div class="section-divider">Your production</div>
         <div class="form-row">
@@ -1014,54 +513,50 @@
   </div>
 </section>
 
+<!-- START: Agent Systems Integration (Admin) -->
+<section id="agent-integration" class="bg-white">
+  <div class="container">
+    <span class="section-label">Admin · Integrations</span>
+    <h2>Agent systems (Admin)</h2>
+    <p class="section-desc">Only visible to approved admins. Replace the placeholder URLs with your real vendor URLs. Do not put API keys in the page.</p>
+
+    <div id="integrationControls" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
+      <a id="openPALS" class="btn btn-outline" href="#" target="_blank" rel="noopener">Open PALS Portal</a>
+      <a id="openPaperless" class="btn btn-outline" href="#" target="_blank" rel="noopener">Open Paperless Pipeline</a>
+      <a id="openBullseye" class="btn btn-outline" href="#" target="_blank" rel="noopener">Open Bullseye</a>
+      <button id="createTestLead" class="btn btn-primary">Create test lead (Bullseye)</button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:1rem">
+      <div>
+        <h4>PALS (embed)</h4>
+        <iframe id="palsIframe" src="" style="width:100%;height:520px;border:1px solid var(--gray-200);border-radius:8px" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+      </div>
+      <div>
+        <h4>Paperless Pipeline (embed)</h4>
+        <iframe id="paperlessIframe" src="" style="width:100%;height:520px;border:1px solid var(--gray-200);border-radius:8px" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:1rem; color: var(--gray-600); font-size: 0.8rem;">
+      Replace the placeholder URLs with the actual vendor URLs. If a vendor blocks iframe embedding, the system will open in a new tab instead.
+    </div>
+  </div>
+</section>
+<!-- END: Agent Systems Integration (Admin) -->
+
 <section id="technology">
   <div class="container">
     <span class="section-label">Your Platform</span>
     <h2>Technology</h2>
     <p class="section-desc">Modern tools designed to help you run and grow your business efficiently.</p>
     <div class="card-grid" id="techCards">
-      <div class="card">
-        <div class="card-icon">📊</div>
-        <h3>Bullseye CRM</h3>
-        <p>Manage contacts, pipeline, and follow-ups in one place.</p>
-        <span class="status status-setup">Setup available</span>
-        <div style="margin-top:1rem"><a href="#onboarding" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div>
-      </div>
-      <div class="card">
-        <div class="card-icon">📋</div>
-        <h3>Transaction Management</h3>
-        <p>Streamline contracts, deadlines, and closing workflows.</p>
-        <span class="status status-setup">Setup available</span>
-        <div style="margin-top:1rem"><a href="#onboarding" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div>
-      </div>
-      <div class="card">
-        <div class="card-icon">🌐</div>
-        <h3>Website</h3>
-        <p>Professional agent website included with your technology package.</p>
-        <span class="status status-setup">Setup available</span>
-        <div style="margin-top:1rem"><a href="#onboarding" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎯</div>
-        <h3>Lead Management</h3>
-        <p>Capture, track, and nurture leads from multiple sources.</p>
-        <span class="status status-pending">After onboarding</span>
-        <div style="margin-top:1rem"><a href="#leads" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div>
-      </div>
-      <div class="card">
-        <div class="card-icon">🤝</div>
-        <h3>Broker Support</h3>
-        <p>Access experienced broker guidance for complex situations.</p>
-        <span class="status status-ready">Available</span>
-        <div style="margin-top:1rem"><a href="#contact" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎓</div>
-        <h3>Training</h3>
-        <p>Ongoing education and mentorship resources.</p>
-        <span class="status status-ready">Available</span>
-        <div style="margin-top:1rem"><a href="#training" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div>
-      </div>
+      <div class="card"><div class="card-icon">📊</div><h3>Bullseye CRM</h3><p>Manage contacts, pipeline, and follow-ups in one place.</p><span class="status status-setup">Setup available</span><div style="margin-top:1rem"><a href="#onboarding" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div></div>
+      <div class="card"><div class="card-icon">📋</div><h3>Transaction Management</h3><p>Streamline contracts, deadlines, and closing workflows.</p><span class="status status-setup">Setup available</span><div style="margin-top:1rem"><a href="#onboarding" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div></div>
+      <div class="card"><div class="card-icon">🌐</div><h3>Website</h3><p>Professional agent website included with your technology package.</p><span class="status status-setup">Setup available</span><div style="margin-top:1rem"><a href="#onboarding" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div></div>
+      <div class="card"><div class="card-icon">🎯</div><h3>Lead Management</h3><p>Capture, track, and nurture leads from multiple sources.</p><span class="status status-pending">After onboarding</span><div style="margin-top:1rem"><a href="#leads" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div></div>
+      <div class="card"><div class="card-icon">🤝</div><h3>Broker Support</h3><p>Access experienced broker guidance for complex situations.</p><span class="status status-ready">Available</span><div style="margin-top:1rem"><a href="#contact" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div></div>
+      <div class="card"><div class="card-icon">🎓</div><h3>Training</h3><p>Ongoing education and mentorship resources.</p><span class="status status-ready">Available</span><div style="margin-top:1rem"><a href="#training" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem">Learn More</a></div></div>
     </div>
   </div>
 </section>
@@ -1071,7 +566,6 @@
     <span class="section-label">Growth Engine</span>
     <h2>Don't Build Your Business Alone</h2>
     <p class="section-desc">United provides access to lead-generation opportunities and technology, including Zillow Premier lead opportunities where available.</p>
-
     <div class="funnel">
       <div class="funnel-stage">LEAD</div>
       <div class="funnel-stage">CONTACT</div>
@@ -1080,23 +574,10 @@
       <div class="funnel-stage">CONTRACT</div>
       <div class="funnel-stage">CLOSING</div>
     </div>
-
     <div class="card-grid mt-2">
-      <div class="card">
-        <div class="card-icon">🏠</div>
-        <h3>Zillow Premier Opportunities</h3>
-        <p>Access to Premier Agent lead opportunities where available in your market.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📱</div>
-        <h3>Lead Technology</h3>
-        <p>Tools to capture, organize, and follow up with every inquiry.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📈</div>
-        <h3>Marketing Support</h3>
-        <p>Resources to help you present a professional brand online and offline.</p>
-      </div>
+      <div class="card"><div class="card-icon">🏠</div><h3>Zillow Premier Opportunities</h3><p>Access to Premier Agent lead opportunities where available in your market.</p></div>
+      <div class="card"><div class="card-icon">📱</div><h3>Lead Technology</h3><p>Tools to capture, organize, and follow up with every inquiry.</p></div>
+      <div class="card"><div class="card-icon">📈</div><h3>Marketing Support</h3><p>Resources to help you present a professional brand online and offline.</p></div>
     </div>
   </div>
 </section>
@@ -1107,46 +588,10 @@
     <h2>Your First 30 Days</h2>
     <p class="section-desc">A clear weekly roadmap to go from new affiliate to producing agent.</p>
     <div class="weeks">
-      <div class="week-card">
-        <div class="week-label">Week 1</div>
-        <h3>Foundation</h3>
-        <ul>
-          <li>Complete onboarding</li>
-          <li>Set up CRM</li>
-          <li>Import contacts</li>
-          <li>Create professional profiles</li>
-          <li>Learn transaction workflow</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-label">Week 2</div>
-        <h3>Activate Network</h3>
-        <ul>
-          <li>Contact Sphere of Influence</li>
-          <li>Begin daily prospecting</li>
-          <li>Learn lead systems</li>
-          <li>Attend training</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-label">Week 3</div>
-        <h3>Skill Building</h3>
-        <ul>
-          <li>Practice buyer consultation</li>
-          <li>Practice listing presentation</li>
-          <li>Follow up with leads</li>
-          <li>Schedule appointments</li>
-        </ul>
-      </div>
-      <div class="week-card">
-        <div class="week-label">Week 4</div>
-        <h3>Plan Ahead</h3>
-        <ul>
-          <li>Review KPIs</li>
-          <li>Identify pipeline opportunities</li>
-          <li>Create 90-day production plan</li>
-        </ul>
-      </div>
+      <div class="week-card"><div class="week-label">Week 1</div><h3>Foundation</h3><ul><li>Complete onboarding</li><li>Set up CRM</li><li>Import contacts</li><li>Create professional profiles</li><li>Learn transaction workflow</li></ul></div>
+      <div class="week-card"><div class="week-label">Week 2</div><h3>Activate Network</h3><ul><li>Contact Sphere of Influence</li><li>Begin daily prospecting</li><li>Learn lead systems</li><li>Attend training</li></ul></div>
+      <div class="week-card"><div class="week-label">Week 3</div><h3>Skill Building</h3><ul><li>Practice buyer consultation</li><li>Practice listing presentation</li><li>Follow up with leads</li><li>Schedule appointments</li></ul></div>
+      <div class="week-card"><div class="week-label">Week 4</div><h3>Plan Ahead</h3><ul><li>Review KPIs</li><li>Identify pipeline opportunities</li><li>Create 90-day production plan</li></ul></div>
     </div>
   </div>
 </section>
@@ -1157,24 +602,9 @@
     <h2>Training Center</h2>
     <p class="section-desc">Resources to help you sharpen skills and build momentum.</p>
     <div class="card-grid">
-      <div class="card">
-        <div class="card-icon">📘</div>
-        <h3>Onboarding Curriculum</h3>
-        <p>Step-by-step guides covering compliance, systems, and launch activities.</p>
-        <a href="#onboarding" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem;margin-top:0.5rem">Go to Onboarding</a>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎤</div>
-        <h3>Live & Recorded Sessions</h3>
-        <p>Training sessions on buyer consultations, listings, and lead conversion.</p>
-        <span class="status status-ready" style="margin-top:0.5rem">Available</span>
-      </div>
-      <div class="card">
-        <div class="card-icon">👥</div>
-        <h3>Mentorship</h3>
-        <p>Connect with experienced agents and broker support for guidance.</p>
-        <a href="#contact" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem;margin-top:0.5rem">Talk to Lester</a>
-      </div>
+      <div class="card"><div class="card-icon">📘</div><h3>Onboarding Curriculum</h3><p>Step-by-step guides covering compliance, systems, and launch activities.</p><a href="#onboarding" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem;margin-top:0.5rem">Go to Onboarding</a></div>
+      <div class="card"><div class="card-icon">🎤</div><h3>Live & Recorded Sessions</h3><p>Training sessions on buyer consultations, listings, and lead conversion.</p><span class="status status-ready" style="margin-top:0.5rem">Available</span></div>
+      <div class="card"><div class="card-icon">👥</div><h3>Mentorship</h3><p>Connect with experienced agents and broker support for guidance.</p><a href="#contact" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.85rem;margin-top:0.5rem">Talk to Lester</a></div>
     </div>
   </div>
 </section>
@@ -1220,14 +650,11 @@
       <div class="recruiter-privacy">
         <strong>Privacy notice:</strong> This view shows only first name + last initial, onboarding step status, and start date. No license numbers, emails, phone numbers, home addresses, or other private agent information are stored or displayed on this public prototype. In production, this dashboard would require authenticated brokerage login.
       </div>
-
       <div class="recruiter-stats" id="recruiterStats"></div>
-
       <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;margin-bottom:1rem;justify-content:space-between">
         <div style="font-weight:700;color:var(--navy)">Agents in onboarding</div>
         <button class="btn btn-outline" style="padding:0.45rem 0.9rem;font-size:0.8rem" onclick="lockRecruiter()">Lock dashboard</button>
       </div>
-
       <div class="agent-table-wrap">
         <table class="agent-table">
           <thead>
@@ -1243,7 +670,6 @@
           <tbody id="agentTableBody"></tbody>
         </table>
       </div>
-
       <div class="agent-detail" id="agentDetail"></div>
     </div>
   </div>
@@ -1262,9 +688,7 @@
       <a href="#recruiter" onclick="showRecruiterSection()" style="opacity:0.7">Recruiter</a>
     </div>
   </div>
-  <div class="footer-disclaimer">
-    Program availability, fees, lead programs, technology, and brokerage offerings are subject to change. Confirm current terms with United Real Estate Philadelphia. Each office is independently owned and operated. Commission calculations are estimates for informational purposes only. Recruiter dashboard is for authorized brokerage staff only and does not display private agent information on this public prototype.
-  </div>
+  <div class="footer-disclaimer">Program availability, fees, lead programs, technology, and brokerage offerings are subject to change. Confirm current terms with United Real Estate Philadelphia. Each office is independently owned and operated. Commission calculations are estimates for informational purposes only. Recruiter dashboard is for authorized brokerage staff only and does not display private agent information on this public prototype.</div>
 </footer>
 
 <div class="sticky-cta">
@@ -1273,100 +697,28 @@
 
 <script>
   const onboardingSteps = [
-    {
-      id: 1,
-      title: "License & Compliance",
-      items: [
-        "Confirm active Pennsylvania real estate license",
-        "Submit license documentation",
-        "Complete any required compliance acknowledgments"
-      ],
-      resources: "Contact your broker for license transfer guidance."
-    },
-    {
-      id: 2,
-      title: "Brokerage Documents",
-      items: [
-        "Review independent contractor agreement",
-        "Sign affiliation paperwork",
-        "Complete W-9 and required forms"
-      ],
-      resources: "Documents provided by brokerage administration."
-    },
-    {
-      id: 3,
-      title: "MLS & Associations",
-      items: [
-        "Join or transfer local MLS membership",
-        "Complete association applications",
-        "Obtain MLS credentials"
-      ],
-      resources: "Brokerage will assist with MLS and association setup."
-    },
-    {
-      id: 4,
-      title: "Technology Setup",
-      items: [
-        "Activate Bullseye CRM account",
-        "Set up transaction management access",
-        "Configure email and login credentials"
-      ],
-      resources: "Tech setup guides available after affiliation."
-    },
-    {
-      id: 5,
-      title: "Marketing Setup",
-      items: [
-        "Launch agent website",
-        "Create professional profile photos/bios",
-        "Set up social media business presence"
-      ],
-      resources: "Website included in $69/mo technology package."
-    },
-    {
-      id: 6,
-      title: "Lead Generation",
-      items: [
-        "Review available lead programs",
-        "Configure lead routing preferences",
-        "Learn CRM lead follow-up workflows"
-      ],
-      resources: "Zillow Premier opportunities where available."
-    },
-    {
-      id: 7,
-      title: "Business Launch",
-      items: [
-        "Import sphere of influence contacts",
-        "Announce your new affiliation",
-        "Schedule first training session",
-        "Set 30-day activity goals"
-      ],
-      resources: "See First 30 Days plan for weekly milestones."
-    }
+    { id: 1, title: "License & Compliance", items: ["Confirm active Pennsylvania real estate license","Submit license documentation","Complete any required compliance acknowledgments"], resources: "Contact your broker for license transfer guidance." },
+    { id: 2, title: "Brokerage Documents", items: ["Review independent contractor agreement","Sign affiliation paperwork","Complete W-9 and required forms"], resources: "Documents provided by brokerage administration." },
+    { id: 3, title: "MLS & Associations", items: ["Join or transfer local MLS membership","Complete association applications","Obtain MLS credentials"], resources: "Brokerage will assist with MLS and association setup." },
+    { id: 4, title: "Technology Setup", items: ["Activate Bullseye CRM account","Set up transaction management access","Configure email and login credentials"], resources: "Tech setup guides available after affiliation." },
+    { id: 5, title: "Marketing Setup", items: ["Launch agent website","Create professional profile photos/bios","Set up social media business presence"], resources: "Website included in $69/mo technology package." },
+    { id: 6, title: "Lead Generation", items: ["Review available lead programs","Configure lead routing preferences","Learn CRM lead follow-up workflows"], resources: "Zillow Premier opportunities where available." },
+    { id: 7, title: "Business Launch", items: ["Import sphere of influence contacts","Announce your new affiliation","Schedule first training session","Set 30-day activity goals"], resources: "See First 30 Days plan for weekly milestones." }
   ];
 
-  function loadProgress() {
-    try {
-      return JSON.parse(localStorage.getItem('unitedOnboarding') || '{}');
-    } catch { return {}; }
-  }
-  function saveProgress(data) {
-    localStorage.setItem('unitedOnboarding', JSON.stringify(data));
-  }
-
+  function loadProgress() { try { return JSON.parse(localStorage.getItem('unitedOnboarding') || '{}'); } catch { return {}; } }
+  function saveProgress(data) { localStorage.setItem('unitedOnboarding', JSON.stringify(data)); }
   let progress = loadProgress();
 
   function renderSteps() {
     const container = document.getElementById('onboardingSteps');
     container.innerHTML = '';
-    onboardingSteps.forEach((step, idx) => {
-      const stepKey = 'step' + step.id;
-      const checked = progress[stepKey] || [];
+    onboardingSteps.forEach((step) => {
+      const key = 'step' + step.id;
+      const checked = progress[key] || [];
       const pct = Math.round((checked.length / step.items.length) * 100);
       const isComplete = pct === 100;
       const isOpen = progress.openStep === step.id;
-
       const el = document.createElement('div');
       el.className = 'step' + (isComplete ? ' completed' : '') + (isOpen ? ' open' : '');
       el.innerHTML = `
@@ -1379,18 +731,13 @@
           <ul class="checklist">
             ${step.items.map((item, i) => `
               <li>
-                <input type="checkbox" id="s${step.id}i${i}" 
-                  ${checked.includes(i) ? 'checked' : ''}
-                  onchange="toggleItem(${step.id}, ${i})">
+                <input type="checkbox" id="s${step.id}i${i}" ${checked.includes(i) ? 'checked' : ''} onchange="toggleItem(${step.id}, ${i})">
                 <label for="s${step.id}i${i}">${item}</label>
               </li>
             `).join('')}
           </ul>
           <div class="resources"><strong>Resources:</strong> ${step.resources}</div>
-          <button class="btn btn-primary" style="margin-top:0.5rem;padding:0.55rem 1.2rem;font-size:0.875rem"
-            onclick="markStepComplete(${step.id})">
-            ${isComplete ? 'Completed ✓' : 'Mark Complete'}
-          </button>
+          <button class="btn btn-primary" style="margin-top:0.5rem;padding:0.55rem 1.2rem;font-size:0.875rem" onclick="markStepComplete(${step.id})">${isComplete ? 'Completed ✓' : 'Mark Complete'}</button>
         </div>
       `;
       container.appendChild(el);
@@ -1398,83 +745,27 @@
     updateOverallProgress();
   }
 
-  function toggleStep(id) {
-    progress.openStep = progress.openStep === id ? null : id;
-    saveProgress(progress);
-    renderSteps();
-  }
-
-  function toggleItem(stepId, itemIdx) {
-    const key = 'step' + stepId;
-    if (!progress[key]) progress[key] = [];
-    const arr = progress[key];
-    const pos = arr.indexOf(itemIdx);
-    if (pos > -1) arr.splice(pos, 1);
-    else arr.push(itemIdx);
-    saveProgress(progress);
-    renderSteps();
-  }
-
-  function markStepComplete(stepId) {
-    const step = onboardingSteps.find(s => s.id === stepId);
-    progress['step' + stepId] = step.items.map((_, i) => i);
-    saveProgress(progress);
-    renderSteps();
-  }
-
+  function toggleStep(id) { progress.openStep = progress.openStep === id ? null : id; saveProgress(progress); renderSteps(); }
+  function toggleItem(stepId, itemIdx) { const key = 'step' + stepId; if (!progress[key]) progress[key] = []; const arr = progress[key]; const pos = arr.indexOf(itemIdx); if (pos > -1) arr.splice(pos, 1); else arr.push(itemIdx); saveProgress(progress); renderSteps(); }
+  function markStepComplete(stepId) { const step = onboardingSteps.find(s => s.id === stepId); progress['step' + stepId] = step.items.map((_, i) => i); saveProgress(progress); renderSteps(); }
   function updateOverallProgress() {
     let totalItems = 0, doneItems = 0;
-    onboardingSteps.forEach(step => {
-      totalItems += step.items.length;
-      const checked = progress['step' + step.id] || [];
-      doneItems += checked.length;
-    });
+    onboardingSteps.forEach(step => { totalItems += step.items.length; const checked = progress['step' + step.id] || []; doneItems += checked.length; });
     const pct = totalItems ? Math.round((doneItems / totalItems) * 100) : 0;
     document.getElementById('overallPct').textContent = pct + '%';
     document.getElementById('progressFill').style.width = pct + '%';
-    const completedSteps = onboardingSteps.filter(s => {
-      const c = progress['step' + s.id] || [];
-      return c.length === s.items.length;
-    }).length;
+    const completedSteps = onboardingSteps.filter(s => (progress['step' + s.id] || []).length === s.items.length).length;
     document.getElementById('stepsDone').textContent = completedSteps + ' / 7 steps';
   }
 
   const brokeragePresets = {
-    custom: {
-      label: 'Your current plan',
-      note: 'Enter your actual split, cap, monthly fees, and any royalty percentage. All fields are editable.',
-      split: 30, cap: 20000, monthly: 150, royalty: 0
-    },
-    kw: {
-      label: 'Keller Williams (illustrative)',
-      note: 'Example planning values often associated with split-to-cap models. Not KW’s official plan — adjust to your office and level.',
-      split: 30, cap: 20000, monthly: 175, royalty: 0
-    },
-    remax: {
-      label: 'RE/MAX (illustrative)',
-      note: 'Example planning values that may include a royalty-style component. Not RE/MAX’s official plan — adjust to your agreement.',
-      split: 5, cap: 0, monthly: 200, royalty: 5
-    },
-    compass: {
-      label: 'Compass (illustrative)',
-      note: 'Example planning values for a split-based model. Compass terms vary widely — enter your actual numbers.',
-      split: 30, cap: 25000, monthly: 150, royalty: 0
-    },
-    homesmart: {
-      label: 'HomeSmart (illustrative)',
-      note: 'Example planning values for a fee-oriented model. HomeSmart structures vary — adjust to your plan.',
-      split: 15, cap: 0, monthly: 100, royalty: 0
-    },
-    exp: {
-      label: 'eXp Realty (illustrative)',
-      note: 'Example planning values that may include revenue share or fee components. Not eXp’s official plan — use your real numbers.',
-      split: 20, cap: 16000, monthly: 85, royalty: 0
-    },
-    other: {
-      label: 'Other traditional (illustrative)',
-      note: 'Generic traditional split/cap starting point. Replace with your actual brokerage terms.',
-      split: 30, cap: 18000, monthly: 150, royalty: 0
-    }
+    custom: { label: 'Your current plan', note: 'Enter your actual split, cap, monthly fees, and any royalty percentage. All fields are editable.', split: 30, cap: 20000, monthly: 150, royalty: 0 },
+    kw: { label: 'Keller Williams (illustrative)', note: 'Example planning values often associated with split-to-cap models. Not KW’s official plan — adjust to your office and level.', split: 30, cap: 20000, monthly: 175, royalty: 0 },
+    remax: { label: 'RE/MAX (illustrative)', note: 'Example planning values that may include a royalty-style component. Not RE/MAX’s official plan — adjust to your agreement.', split: 5, cap: 0, monthly: 200, royalty: 5 },
+    compass: { label: 'Compass (illustrative)', note: 'Example planning values for a split-based model. Compass terms vary widely — enter your actual numbers.', split: 30, cap: 25000, monthly: 150, royalty: 0 },
+    homesmart: { label: 'HomeSmart (illustrative)', note: 'Example planning values for a fee-oriented model. HomeSmart structures vary — adjust to your plan.', split: 15, cap: 0, monthly: 100, royalty: 0 },
+    exp: { label: 'eXp Realty (illustrative)', note: 'Example planning values that may include revenue share or fee components. Not eXp’s official plan — use your real numbers.', split: 20, cap: 16000, monthly: 85, royalty: 0 },
+    other: { label: 'Other traditional (illustrative)', note: 'Generic traditional split/cap starting point. Replace with your actual brokerage terms.', split: 30, cap: 18000, monthly: 150, royalty: 0 }
   };
 
   function applyBrokeragePreset() {
@@ -1502,17 +793,15 @@
     const gci = avgPrice * (commPct / 100) * numTx;
     let splitCost = gci * (currentSplit / 100);
     if (currentCap > 0 && splitCost > currentCap) splitCost = currentCap;
-
     const royaltyCost = gci * (royaltyPct / 100);
     const annualFees = monthlyFees * 12;
     const currentTotalCost = splitCost + royaltyCost + annualFees;
     const currentNet = gci - currentTotalCost;
-
     const unitedTotalCost = unitedMonthly * 12;
     const unitedNet = gci - unitedTotalCost;
     const diff = unitedNet - currentNet;
-
     const fmt = n => '$' + Math.round(n).toLocaleString();
+
     document.getElementById('gci').textContent = fmt(gci);
     document.getElementById('splitCost').textContent = fmt(splitCost);
     document.getElementById('royaltyCost').textContent = fmt(royaltyCost);
@@ -1528,23 +817,10 @@
     diffEl.style.color = diff >= 0 ? '#059669' : '#DC2626';
   }
 
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-  function scrollToId(id) {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-  }
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function scrollToId(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
 
-  const STEP_NAMES = [
-    'License & Compliance',
-    'Brokerage Documents',
-    'MLS & Associations',
-    'Technology Setup',
-    'Marketing Setup',
-    'Lead Generation',
-    'Business Launch'
-  ];
-
+  const STEP_NAMES = ['License & Compliance','Brokerage Documents','MLS & Associations','Technology Setup','Marketing Setup','Lead Generation','Business Launch'];
   const demoAgents = [
     { id: 'a1', displayName: 'Jordan M.', started: '2026-09-12', stepProgress: [100, 100, 100, 67, 0, 0, 0] },
     { id: 'a2', displayName: 'Alex R.', started: '2026-09-20', stepProgress: [100, 100, 33, 0, 0, 0, 0] },
@@ -1553,7 +829,6 @@
     { id: 'a5', displayName: 'Morgan P.', started: '2026-10-03', stepProgress: [33, 0, 0, 0, 0, 0, 0] },
     { id: 'a6', displayName: 'Riley K.', started: '2026-08-15', stepProgress: [100, 100, 100, 100, 100, 100, 100] }
   ];
-
   const RECRUITER_CODE = 'UNITED';
 
   function showRecruiterSection() {
@@ -1590,28 +865,14 @@
     document.getElementById('agentDetail').classList.remove('open');
   }
 
-  function agentOverallPct(agent) {
-    const sum = agent.stepProgress.reduce((a, b) => a + b, 0);
-    return Math.round(sum / agent.stepProgress.length);
-  }
-
-  function agentStatus(agent) {
-    const pct = agentOverallPct(agent);
-    if (pct === 100) return { label: 'Complete', cls: 'badge-complete' };
-    if (pct === 0 || (agent.stepProgress[0] < 100 && pct < 20)) return { label: 'New', cls: 'badge-new' };
-    return { label: 'In progress', cls: 'badge-active' };
-  }
+  function agentOverallPct(agent) { const sum = agent.stepProgress.reduce((a, b) => a + b, 0); return Math.round(sum / agent.stepProgress.length); }
+  function agentStatus(agent) { const pct = agentOverallPct(agent); if (pct === 100) return { label: 'Complete', cls: 'badge-complete' }; if (pct === 0 || (agent.stepProgress[0] < 100 && pct < 20)) return { label: 'New', cls: 'badge-new' }; return { label: 'In progress', cls: 'badge-active' }; }
 
   function renderRecruiterDash() {
     const total = demoAgents.length;
     const complete = demoAgents.filter(a => agentOverallPct(a) === 100).length;
-    const inProgress = demoAgents.filter(a => {
-      const p = agentOverallPct(a);
-      return p > 0 && p < 100;
-    }).length;
-    const notStarted = total - complete - inProgress;
+    const inProgress = demoAgents.filter(a => { const p = agentOverallPct(a); return p > 0 && p < 100; }).length;
     const avgPct = Math.round(demoAgents.reduce((s, a) => s + agentOverallPct(a), 0) / total);
-
     document.getElementById('recruiterStats').innerHTML = `
       <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Agents</div></div>
       <div class="stat-card"><div class="stat-num">${inProgress}</div><div class="stat-label">In progress</div></div>
@@ -1623,24 +884,8 @@
     tbody.innerHTML = demoAgents.map(agent => {
       const pct = agentOverallPct(agent);
       const status = agentStatus(agent);
-      const dots = agent.stepProgress.map((p, i) => {
-        const cls = p === 100 ? 'done' : (p > 0 ? 'partial' : '');
-        return `<span class="step-dot ${cls}" title="${STEP_NAMES[i]}: ${p}%">${i + 1}</span>`;
-      }).join('');
-
-      return `<tr>
-        <td><div class="agent-name">${agent.displayName}</div><div class="agent-meta">ID: ${agent.id}</div></td>
-        <td class="hide-mobile">${agent.started}</td>
-        <td>
-          <div class="mini-progress">
-            <div class="mini-track"><div class="mini-fill" style="width:${pct}%"></div></div>
-            <span style="font-weight:600;font-size:0.85rem;min-width:2.5rem">${pct}%</span>
-          </div>
-        </td>
-        <td class="hide-mobile"><div class="step-dots">${dots}</div></td>
-        <td><span class="badge ${status.cls}">${status.label}</span></td>
-        <td><button class="btn btn-outline" style="padding:0.35rem 0.7rem;font-size:0.75rem" onclick="viewAgent('${agent.id}')">View</button></td>
-      </tr>`;
+      const dots = agent.stepProgress.map((p, i) => `<span class="step-dot ${p === 100 ? 'done' : (p > 0 ? 'partial' : '')}" title="${STEP_NAMES[i]}: ${p}%">${i + 1}</span>`).join('');
+      return `<tr><td><div class="agent-name">${agent.displayName}</div><div class="agent-meta">ID: ${agent.id}</div></td><td class="hide-mobile">${agent.started}</td><td><div class="mini-progress"><div class="mini-track"><div class="mini-fill" style="width:${pct}%"></div></div><span style="font-weight:600;font-size:0.85rem;min-width:2.5rem">${pct}%</span></div></td><td class="hide-mobile"><div class="step-dots">${dots}</div></td><td><span class="badge ${status.cls}">${status.label}</span></td><td><button class="btn btn-outline" style="padding:0.35rem 0.7rem;font-size:0.75rem" onclick="viewAgent('${agent.id}')">View</button></td></tr>`;
     }).join('');
   }
 
@@ -1673,14 +918,40 @@
     detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  if (location.hash === '#recruiter') {
-    document.getElementById('recruiter').style.display = 'block';
-    showRecruiterSection();
+  if (location.hash === '#recruiter') { document.getElementById('recruiter').style.display = 'block'; showRecruiterSection(); }
+
+  const isAdmin = sessionStorage.getItem('unitedAdmin') === '1';
+  if (!isAdmin) {
+    const el = document.getElementById('agent-integration');
+    if (el) el.style.display = 'none';
   }
+
+  const PALS_URL = 'PLACEHOLDER_PALS_URL';
+  const PAPERLESS_URL = 'PLACEHOLDER_PAPERLESS_URL';
+  const BULLSEYE_APP_URL = 'PLACEHOLDER_BULLSEYE_URL';
+  const PROXY_API_BASE = '/.netlify/functions';
+  document.getElementById('openPALS').href = PALS_URL;
+  document.getElementById('openPaperless').href = PAPERLESS_URL;
+  document.getElementById('openBullseye').href = BULLSEYE_APP_URL;
+  document.getElementById('palsIframe').src = PALS_URL || '';
+  document.getElementById('paperlessIframe').src = PAPERLESS_URL || '';
+
+  document.getElementById('createTestLead').addEventListener('click', async () => {
+    if (!confirm('Create a test lead via Bullseye (server-side proxy)?')) return;
+    try {
+      const res = await fetch(PROXY_API_BASE + '/bullseye-create-lead', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: 'Test Lead', phone: '555-555-5555', email: 'test@example.com' })
+      });
+      const json = await res.json();
+      alert('Response: ' + (json.message || JSON.stringify(json)));
+    } catch (err) {
+      console.error(err); alert('Error creating lead (check server logs).');
+    }
+  });
 
   renderSteps();
   runCalculator();
-
   ['avgPrice','numTx','commPct','currentSplit','currentCap','monthlyFees','royaltyPct','unitedMonthly'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.addEventListener('input', runCalculator);
